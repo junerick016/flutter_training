@@ -44,6 +44,12 @@ class _QuizState extends State<Quiz> {
     if (activePage == 'result-screen') {
       screenWidget = ResultScreen(
         chosenAnswers: selectedAnswers,
+        reStartQuiz: () {
+          setState(() {
+            activePage = 'start-screen';
+            selectedAnswers = [];
+          });
+        },
       );
     }
 

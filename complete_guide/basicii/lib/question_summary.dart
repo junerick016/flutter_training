@@ -8,15 +8,33 @@ class QuestionSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 400,
       child: SingleChildScrollView(
         child: Column(
           children: summaryData.map(
             (data) {
               return Row(children: [
-                Text(((data['question_index'] as int) + 1).toString()),
+                const SizedBox(height: 10),
+                Container(
+                  width: 30,
+                  height: 30,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 28, 30, 29),
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Text(
+                    ((data['question_index'] as int) + 1).toString(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 12),
+                  ),
+                ),
+                const SizedBox(width: 10),
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(data['question'] as String),
                       const SizedBox(
