@@ -7,7 +7,9 @@ import 'package:favorite_places/models/place.dart';
 // AIzaSyCJeDI44HHZ96HoOCY5cT8VDXQYZw58esY
 
 class LocationInput extends StatefulWidget {
-  const LocationInput({super.key});
+  const LocationInput({super.key, required this.onSelectedLocation});
+
+  final void Function(PlaceLocation location) onSelectedLocation;
 
   @override
   State<LocationInput> createState() {
@@ -18,7 +20,7 @@ class LocationInput extends StatefulWidget {
 class _LocationInput extends State<LocationInput> {
   PlaceLocation? _pickedLocation;
   var _isGettingLocation = false;
-  var _apiKey = 'AIzaSyCJeDI44HHZ96HoOCY5cT8VDXQYZw58esY';
+  final _apiKey = 'AIzaSyCJeDI44HHZ96HoOCY5cT8VDXQYZw58esY';
 
   String get locationImage {
     if (_pickedLocation == null) {
@@ -85,6 +87,8 @@ class _LocationInput extends State<LocationInput> {
       );
       _isGettingLocation = false;
     });
+
+    widget.onSelectedLocation(_pickedLocation!);
   }
 
   @override
