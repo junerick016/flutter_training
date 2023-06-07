@@ -19,7 +19,7 @@ class LocationInput extends StatefulWidget {
 
 class _LocationInput extends State<LocationInput> {
   PlaceLocation? _pickedLocation;
-  var _isGettingLocation = false;
+  var _isLoading = false;
   final _apiKey = 'AIzaSyCJeDI44HHZ96HoOCY5cT8VDXQYZw58esY';
 
   String get locationImage {
@@ -34,7 +34,7 @@ class _LocationInput extends State<LocationInput> {
 
   void _getCurrentLocation() async {
     setState(() {
-      _isGettingLocation = true;
+      _isLoading = true;
     });
 
     Location location = Location();
@@ -60,7 +60,7 @@ class _LocationInput extends State<LocationInput> {
     }
 
     setState(() {
-      _isGettingLocation = true;
+      _isLoading = true;
     });
 
     locationData = await location.getLocation();
@@ -85,7 +85,7 @@ class _LocationInput extends State<LocationInput> {
         longitude: lng,
         address: address,
       );
-      _isGettingLocation = false;
+      _isLoading = false;
     });
 
     widget.onSelectedLocation(_pickedLocation!);
@@ -111,7 +111,7 @@ class _LocationInput extends State<LocationInput> {
       );
     }
 
-    if (_isGettingLocation) {
+    if (_isLoading) {
       previewContent = const CircularProgressIndicator();
     }
 
