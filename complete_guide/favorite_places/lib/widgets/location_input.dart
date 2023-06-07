@@ -3,6 +3,7 @@ import 'package:location/location.dart';
 import 'package:http/http.dart';
 
 // AIzaSyCJeDI44HHZ96HoOCY5cT8VDXQYZw58esY
+// stop from video 255
 
 class LocationInput extends StatefulWidget {
   const LocationInput({super.key});
@@ -56,7 +57,6 @@ class _LocationInput extends State<LocationInput> {
 
     final url = Uri.parse(
         'https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lng&key=$API_KEY');
-
 
     print(lat);
     print(lng);
