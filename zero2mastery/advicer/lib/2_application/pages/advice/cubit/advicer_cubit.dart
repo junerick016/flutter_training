@@ -10,8 +10,8 @@ const serverFailureMessage = 'Server Failure';
 const cacheFailureMessage = 'Cache Failure';
 
 class AdvicerCubit extends Cubit<AdvicerCubitState> {
-  AdvicerCubit() : super(AdvicerInitial());
-  final AdviceUseCases adviceUsecases = AdviceUseCases();
+  AdvicerCubit({required this.adviceUsecases}) : super(AdvicerInitial());
+  final AdviceUseCases adviceUsecases;
   // could also use other usecases
 
   void adviceRequested() async {
