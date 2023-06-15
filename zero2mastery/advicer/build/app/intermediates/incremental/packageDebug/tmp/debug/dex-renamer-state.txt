@@ -1,0 +1,4 @@
+#Thu Jun 15 16:51:36 PST 2023
+base.0=/Users/junerickduzon/canapii/flutter_training/zero2mastery/advicer/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
