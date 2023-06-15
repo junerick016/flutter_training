@@ -16,10 +16,7 @@ void main() {
         build: () => AdvicerBloc(),
         act: (bloc) => bloc.add(AdviceRequestedEvent()),
         wait: const Duration(seconds: 3),
-        expect: () => <AdvicerState>[
-          AdvicerStateLoading(),
-          AdvicerStateError(message: 'error message')
-        ],
+        expect: () => <AdvicerState>[AdvicerStateLoading(), AdvicerStateError(message: 'error message')],
       );
     });
   });

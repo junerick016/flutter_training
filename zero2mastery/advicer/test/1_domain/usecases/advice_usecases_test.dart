@@ -15,21 +15,16 @@ void main() {
     group('should return AdviceEntitiy', () {
       test('when AdviceRepoImpl returns a AdviceModel', () async {
         final mockAdviceRepoImpl = MockAdviceRepoImpl();
-        final adviceUseCaseUnderTest =
-            AdviceUseCases(adviceRepo: mockAdviceRepoImpl);
+        final adviceUseCaseUnderTest = AdviceUseCases(adviceRepo: mockAdviceRepoImpl);
 
-        when(mockAdviceRepoImpl.getAdviceFromDatasource()).thenAnswer(
-            (realInvocation) => Future.value(
-                const Right(AdviceEntity(advice: 'test', id: 42))));
+        when(mockAdviceRepoImpl.getAdviceFromDatasource())
+            .thenAnswer((realInvocation) => Future.value(const Right(AdviceEntity(advice: 'test', id: 42))));
 
         final result = await adviceUseCaseUnderTest.getAdvice();
 
         expect(result.isLeft(), false);
         expect(result.isRight(), true);
-        expect(
-            result,
-            const Right<Failure, AdviceEntity>(
-                AdviceEntity(advice: 'test', id: 42)));
+        expect(result, const Right<Failure, AdviceEntity>(AdviceEntity(advice: 'test', id: 42)));
         verify(mockAdviceRepoImpl.getAdviceFromDatasource()).called(
             1); // when you want to check if a method was not call use verifyNever(mock.methodCall) instead .called(0)
         verifyNoMoreInteractions(mockAdviceRepoImpl);
@@ -39,11 +34,10 @@ void main() {
     group('should return left with', () {
       test('a ServerFailure', () async {
         final mockAdviceRepoImpl = MockAdviceRepoImpl();
-        final adviceUseCaseUnderTest =
-            AdviceUseCases(adviceRepo: mockAdviceRepoImpl);
+        final adviceUseCaseUnderTest = AdviceUseCases(adviceRepo: mockAdviceRepoImpl);
 
-        when(mockAdviceRepoImpl.getAdviceFromDatasource()).thenAnswer(
-            (realInvocation) => Future.value(Left(ServerFailure())));
+        when(mockAdviceRepoImpl.getAdviceFromDatasource())
+            .thenAnswer((realInvocation) => Future.value(Left(ServerFailure())));
 
         final result = await adviceUseCaseUnderTest.getAdvice();
 
@@ -57,11 +51,10 @@ void main() {
       test('a GeneralFailure', () async {
         // arrange
         final mockAdviceRepoImpl = MockAdviceRepoImpl();
-        final adviceUseCaseUnderTest =
-            AdviceUseCases(adviceRepo: mockAdviceRepoImpl);
+        final adviceUseCaseUnderTest = AdviceUseCases(adviceRepo: mockAdviceRepoImpl);
 
-        when(mockAdviceRepoImpl.getAdviceFromDatasource()).thenAnswer(
-            (realInvocation) => Future.value(Left(GeneralFailure())));
+        when(mockAdviceRepoImpl.getAdviceFromDatasource())
+            .thenAnswer((realInvocation) => Future.value(Left(GeneralFailure())));
 
         // act
         final result = await adviceUseCaseUnderTest.getAdvice();

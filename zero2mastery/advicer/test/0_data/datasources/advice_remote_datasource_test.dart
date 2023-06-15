@@ -14,20 +14,16 @@ void main() {
     group('should return AdviceModel', () {
       test('when Client response was 200 and has valid data', () async {
         final mockClient = MockClient();
-        final adviceRemoteDatasourceUnderTest =
-            AdviceRemoteDatasourceImpl(client: mockClient);
+        final adviceRemoteDatasourceUnderTest = AdviceRemoteDatasourceImpl(client: mockClient);
         const responseBody = '{"advice": "test advice", "advice_id": 1}';
 
         when(mockClient.get(
           Uri.parse('https://api.flutter-community.com/api/v1/advice'),
           headers: {
-            'content-type': 'application/json ',
+            'content-type': 'application/json',
           },
-        )).thenAnswer(
-            (realInvocation) => Future.value(Response(responseBody, 200)));
-
-        final result =
-            await adviceRemoteDatasourceUnderTest.getRandomAdviceFromApi();
+        )).thenAnswer((realInvocation) => Future.value(Response(responseBody, 200)));
+        final result = await adviceRemoteDatasourceUnderTest.getRandomAdviceFromApi();
 
         expect(result, AdviceModel(advice: 'test advice', id: 1));
       });
@@ -36,37 +32,31 @@ void main() {
     group('should throw', () {
       test('a ServerException when Client response was not 200', () {
         final mockClient = MockClient();
-        final adviceRemoteDatasourceUnderTest =
-            AdviceRemoteDatasourceImpl(client: mockClient);
+        final adviceRemoteDatasourceUnderTest = AdviceRemoteDatasourceImpl(client: mockClient);
 
         when(mockClient.get(
           Uri.parse('https://api.flutter-community.com/api/v1/advice'),
           headers: {
-            'content-type': 'application/json ',
+            'content-type': 'application/json',
           },
         )).thenAnswer((realInvocation) => Future.value(Response('', 201)));
 
-        expect(() => adviceRemoteDatasourceUnderTest.getRandomAdviceFromApi(),
-            throwsA(isA<ServerException>()));
+        expect(() => adviceRemoteDatasourceUnderTest.getRandomAdviceFromApi(), throwsA(isA<ServerException>()));
       });
 
-      test('a Type Error when Client response was 200 and has no valid data',
-          () {
+      test('a Type Error when Client response was 200 and has no valid data', () {
         final mockClient = MockClient();
-        final adviceRemoteDatasourceUnderTest =
-            AdviceRemoteDatasourceImpl(client: mockClient);
+        final adviceRemoteDatasourceUnderTest = AdviceRemoteDatasourceImpl(client: mockClient);
         const responseBody = '{"advice": "test advice"}';
 
         when(mockClient.get(
           Uri.parse('https://api.flutter-community.com/api/v1/advice'),
           headers: {
-            'content-type': 'application/json ',
+            'content-type': 'application/json',
           },
-        )).thenAnswer(
-            (realInvocation) => Future.value(Response(responseBody, 200)));
+        )).thenAnswer((realInvocation) => Future.value(Response(responseBody, 200)));
 
-        expect(() => adviceRemoteDatasourceUnderTest.getRandomAdviceFromApi(),
-            throwsA(isA<TypeError>()));
+        expect(() => adviceRemoteDatasourceUnderTest.getRandomAdviceFromApi(), throwsA(isA<TypeError>()));
       });
     });
   });

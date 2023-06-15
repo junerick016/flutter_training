@@ -33,10 +33,7 @@ void main() {
           ),
           build: () => AdvicerCubit(adviceUseCases: mockAdviceUseCases),
           act: (cubit) => cubit.adviceRequested(),
-          expect: () => const <AdvicerCubitState>[
-            AdvicerStateLoading(),
-            AdvicerStateLoaded(advice: 'advice')
-          ],
+          expect: () => const <AdvicerCubitState>[AdvicerStateLoading(), AdvicerStateLoaded(advice: 'advice')],
         );
 
         group(
@@ -44,8 +41,7 @@ void main() {
           () {
             blocTest(
               'and a ServerFailure occors',
-              setUp: () =>
-                  when(() => mockAdviceUseCases.getAdvice()).thenAnswer(
+              setUp: () => when(() => mockAdviceUseCases.getAdvice()).thenAnswer(
                 (invocation) => Future.value(
                   Left<Failure, AdviceEntity>(
                     ServerFailure(),
@@ -62,8 +58,7 @@ void main() {
 
             blocTest(
               'and a CacheFailure occors',
-              setUp: () =>
-                  when(() => mockAdviceUseCases.getAdvice()).thenAnswer(
+              setUp: () => when(() => mockAdviceUseCases.getAdvice()).thenAnswer(
                 (invocation) => Future.value(
                   Left<Failure, AdviceEntity>(
                     CacheFailure(),
@@ -80,8 +75,7 @@ void main() {
 
             blocTest(
               'and a GeneralFailure occors',
-              setUp: () =>
-                  when(() => mockAdviceUseCases.getAdvice()).thenAnswer(
+              setUp: () => when(() => mockAdviceUseCases.getAdvice()).thenAnswer(
                 (invocation) => Future.value(
                   Left<Failure, AdviceEntity>(
                     GeneralFailure(),
