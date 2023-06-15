@@ -12,7 +12,7 @@ class AdvicerInitial extends AdvicerCubitState {
 }
 
 class AdvicerStateLoading extends AdvicerCubitState {
-   const AdvicerStateLoading();
+  const AdvicerStateLoading();
 }
 
 class AdvicerStateLoaded extends AdvicerCubitState {
