@@ -177,9 +177,9 @@
     },
     {
       "name": "file",
-      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/file-7.0.0",
+      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/file-6.1.4",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "fixnum",
@@ -200,6 +200,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_driver",
+      "rootUri": "file:///Users/junerickduzon/flutter/packages/flutter_driver",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1",
       "packageUri": "lib/",
@@ -216,6 +222,12 @@
       "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "fuchsia_remote_debug_protocol",
+      "rootUri": "file:///Users/junerickduzon/flutter/packages/fuchsia_remote_debug_protocol",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "get_it",
@@ -252,6 +264,12 @@
       "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "integration_test",
+      "rootUri": "file:///Users/junerickduzon/flutter/packages/integration_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "io",
@@ -344,10 +362,22 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "platform",
+      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/platform-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "pool",
       "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/pool-1.5.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/process-4.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "provider",
@@ -446,6 +476,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "sync_http",
+      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/sync_http-0.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/term_glyph-1.2.1",
       "packageUri": "lib/",
@@ -489,7 +525,7 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/vm_service-11.7.1",
+      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/vm_service-11.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -504,6 +540,12 @@
       "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "webdriver",
+      "rootUri": "file:///Users/junerickduzon/.pub-cache/hosted/pub.dev/webdriver-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "webkit_inspection_protocol",
@@ -524,7 +566,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-06-15T07:02:45.622840Z",
+  "generated": "2023-06-15T08:27:08.427801Z",
   "generator": "pub",
   "generatorVersion": "3.0.3"
 }
