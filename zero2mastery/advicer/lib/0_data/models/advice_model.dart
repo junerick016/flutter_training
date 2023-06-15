@@ -1,8 +1,8 @@
-import 'package:advicer/1_domain/entities/advice_entiry.dart';
+import 'package:advicer/1_domain/entities/advice_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class AdviceModel extends AdviceEntity with EquatableMixin {
-  const AdviceModel({required String advice, required int id})
+  AdviceModel({required String advice, required int id})
       : super(advice: advice, id: id);
 
   factory AdviceModel.fromJson(Map<String, dynamic> json) {

@@ -6,22 +6,22 @@ import 'package:advicer/2_application/pages/advice/cubit/advicer_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 
-final sl = GetIt.I; // sl == service locator
+final sl = GetIt.I; // sl == Service Locator
 
 Future<void> init() async {
-  // ! application layer
-  // factory = every time a new/fresh instance of that class
-  sl.registerFactory(() => AdvicerCubit(adviceUsecases: sl()));
+// ! application Layer
+  // Factory = every time a new/fresh instance of that class
+  sl.registerFactory(() => AdvicerCubit(adviceUseCases: sl()));
 
-  // ! domain layer
+// ! domain Layer
   sl.registerFactory(() => AdviceUseCases(adviceRepo: sl()));
 
-  // ! data layer
+// ! data Layer
   sl.registerFactory<AdviceRepo>(
-      () => AdviceRepoImpl(adviceRemoteDataSource: sl()));
-  sl.registerFactory<AdviceRemoteDataSource>(
-      () => AdviceRemoteDataSourceImpl(client: sl()));
+      () => AdviceRepoImpl(adviceRemoteDatasource: sl()));
+  sl.registerFactory<AdviceRemoteDatasource>(
+      () => AdviceRemoteDatasourceImpl(client: sl()));
 
-  // ! externs
+// ! externs
   sl.registerFactory(() => http.Client());
 }

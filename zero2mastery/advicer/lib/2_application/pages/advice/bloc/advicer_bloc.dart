@@ -14,7 +14,7 @@ class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
       debugPrint('fake get advice triggered');
       await Future.delayed(const Duration(seconds: 3), () {});
       debugPrint('got advice');
-      // emit(AdvicerStateLoaded(advice: 'fake advice to test bloc'));
+      //emit(AdvicerStateLoaded(advice: 'fake advice to test bloc'));
       emit(AdvicerStateError(message: 'error message'));
     });
   }

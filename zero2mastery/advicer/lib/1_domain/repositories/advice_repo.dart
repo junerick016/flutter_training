@@ -1,4 +1,4 @@
-import 'package:advicer/1_domain/entities/advice_entiry.dart';
+import 'package:advicer/1_domain/entities/advice_entity.dart';
 import 'package:dartz/dartz.dart';
 
 import '../failures/failures.dart';
